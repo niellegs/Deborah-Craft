@@ -1,16 +1,32 @@
-const path = require("path")
-const express = require("express")
+import express from 'express';
+import { openDb } from './configDB.js';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-const app = express()
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const app = express();
+
 const port = 8080
 
+
+openDb()
+
+app.use(express.json())
 app.use(express.static(path.join(__dirname, "..", "public")))
 
-app.get("/", (req, res) => {
-    const indexPath = path.join(__dirname, "..", "views", "index.html")
-    res.sendFile(indexPath)
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "views", "index.html"))
+});
+
+app.get("/login", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "views", "login.html"))
 })
 
-app.listen(port, () => {
-    console.log(`Rodando na porta ${port}`)
+app.post('/usuario', (req, res) => {
+    console.log(req.body)
+    res.json({
+        "statusCode": 200
+    })
 })
+
+app.listen(port, () => {console.log(`Rodando API na porta ${port}`)})
