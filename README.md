@@ -14,4 +14,4 @@ Uma loja de artigos naturais e esotéricos desenvolvida para um projeto do PDA.
 - Configurado para abrir na porta 8080.
 
 # Para a Karlla:
-*Eu provavelmente interpretei o projeto errado. Eu achava que era pra construir um e-commerce inteiro, mas eu vi alguns que fizeram o projeto e só construiram as rotas. Foi mal.*
+*Eu provavelmente interpretei o enunciado errado. Eu achava que era pra construir um e-commerce inteiro, mas eu vi alguns que fizeram o projeto e só construiram as rotas. Foi mal.*
