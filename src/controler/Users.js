@@ -22,7 +22,28 @@ export async function updateUser(user) {
     })
 }
 
-export async function selectPessoa(pessoa){
-    return db.all('SELECT * FROM Users')
-    .then(res=>res)
+// Função que retorna todos os usuários
+
+export async function selectUsers(){
+    return openDb().then(db => {
+        return db.all('SELECT * FROM Users')
+        .then(res=>res)
+    })
+}
+
+// Função que retorna um usuário só
+
+export async function selectUser(id) {
+    return openDb().then(db => {
+        return db.get('SELECT * FROM Users WHERE id=?', [id])
+        .then(res => res)
+    })
+}
+
+// Função que apaga um usuário
+
+export async function deleteUser(id) {
+    return openDb().then( db => {
+        return db.get('DELETE FROM Users WHERE id=?', [id])
+    })
 }

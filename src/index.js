@@ -1,6 +1,6 @@
 import express from 'express';
 import { openDb } from './configDB.js';
-import { createTable, insertUser, updateUser } from './controler/Users.js';
+import { createTable, insertUser, updateUser, selectUsers,selectUser, deleteUser } from './controler/Users.js';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -49,8 +49,24 @@ app.put('/usuario', (req, res) => {
     }
 });
 
-app.get("/usuario", (req,res) => {
-    
+// SELECIONA TODOS OS USUÁRIOS
+app.get("/usuarios", async (req,res) => {
+    let users = await selectUsers();
+    res.json(users)
+})
+
+//SELECIONA UM ÚNICO USUÁRIO
+app.get("/usuario", async (req, res) => {
+    let user = await selectUser(req.body.id)
+    res.json({
+        "user": user
+    })
+})
+
+// APAGA UM USUÁRIO
+app.delete("/usuario", async (req, res) => {
+    let user = await deleteUser(req.body.id)
+    res.json('O usuário foi apagado')
 })
 
 // Lugar onde a aplicação tá rodando, graças a deus
