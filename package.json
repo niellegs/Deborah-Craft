@@ -16,7 +16,8 @@
     "sqlite3": "^5.1.6"
   },
   "devDependencies": {
+    "@types/node": "^20.5.0",
     "nodemon": "^3.0.1"
   },
-  "type": "commonjs"
+  "type": "module"
 }

@@ -1,0 +1,109 @@
+@charset 'UTF-8';
+@font-face {
+    font-family: "Josefin_Sans_Medium";
+    src: url("./fonts/Josefin_Sans/static/JosefinSans-Medium.ttf");
+}
+@font-face {
+    font-family: "Josefin_Slab";
+    src: url("./fonts/Josefin_Slab/static/JosefinSlab-Medium.ttf");
+}
+
+:root {
+    --title: "Josefin_Sans_Medium";
+    --paragraph: "Josefin_Slab";
+    --green: #606C5D;
+    --beige: #F7E6C4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--paragraph);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+/* MAIN */
+
+main {
+    z-index: 1;
+    width: 60vw;
+    margin-top: 30vh;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: var(--title);
+    font-size: 1.35rem;
+    margin-bottom: 10vh;
+}
+
+h1, p {
+    color: var(--green);
+}
+
+label, p{
+    margin-left: 2rem;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+input {
+    width: 75%;
+    height: 5vh;
+    border-radius: 2rem;
+    border: 1.5px solid --green;
+    padding:.5rem;
+    font-size: 1rem;
+    margin: 1rem;
+    
+}
+
+button {
+    background-color: var(--green);
+    color: white;
+    width: 75%;
+    height: 5vh;
+    border: none;
+    border-radius: 2rem;
+    margin: 2rem 0;
+    margin-left: -10vw;
+    font-size: 1.2rem;
+}
+
+form ~ p, h1 {
+    margin-left: -9vw;
+}
+
+form ~ p {
+    font-size: 1rem;
+    text-align: center;
+}
+/* FORA DO MAIN*/
+
+main ~img {
+    width: 23vw;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    transform: translate(-10vw, 0rem);
+}
+
+#beige {
+    background-color: var(--beige);
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 40%;
+}

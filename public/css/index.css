@@ -101,16 +101,19 @@ main {
 
 .product {
     text-align: center;
-    width: 290px;
-    height: 440px;
+    width: 18.125rem;
+    height: 27.5rem;
     border: 1px solid black;
 }
 
 
 
-.product img {
-    width: auto;
-    height: 31vh;
+.img-product {
+    width: 100%;
+    height: 65%;
+    background-image: url("../img/th-1044771937.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .product h1 {
