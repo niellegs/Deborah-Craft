@@ -26,84 +26,80 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    color: var(--green);
 }
 
 a {
     text-decoration: none;
 }
-/* MAIN */
-
+/**** MAIN ****/
 main {
-    z-index: 1;
-    width: 60vw;
-    margin-top: 30vh;
-    text-align: center;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:first baseline;
 }
 
-h1 {
+main h1 {
     text-align: center;
     font-family: var(--title);
     font-size: 1.35rem;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
 
-h1, p {
-    color: var(--green);
-}
 
-label, p{
-    margin-left: 2rem;
+main p {
     text-align: left;
-    font-size: 1.2rem;
+    width: 100vw
 }
 
-input {
-    width: 75%;
+main input {
+    width: 45vw;
     height: 5vh;
     border-radius: 2rem;
     border: 1.5px solid --green;
-    padding:.5rem;
+    padding:.7rem;
     font-size: 1rem;
-    margin: 1rem;
-    
+    margin: 1rem 0;
 }
 
-button {
+main button {
     background-color: var(--green);
     color: white;
-    width: 75%;
+    width: 45vw;
     height: 5vh;
     border: none;
     border-radius: 2rem;
     margin: 2rem 0;
-    margin-left: -10vw;
     font-size: 1.2rem;
 }
 
-form ~ p, h1 {
-    margin-left: -9vw;
-}
 
-form ~ p {
-    font-size: 1rem;
+
+/**** FORA DO MAIN ****/
+
+#containerOutside {
+    width: 50vw;
+    display: flex;
     text-align: center;
+    justify-content: center;
 }
-/* FORA DO MAIN*/
 
-main ~img {
-    width: 20vw;
+img {
+    width: 23vw;
     height: auto;
     position: relative;
     z-index: 2;
-    transform: translate(-5vw, 0rem);
+    margin-left: 3vw;
 }
 
-#beige {
-    background-color: var(--beige);
-    top: 0;
-    right: 0;
+#round-thing {
+    width: 20vw;
+    height: 60vh;
     position: absolute;
     z-index: 1;
-    height: 100%;
-    width: 40%;
+    border-radius: 0 0 8rem 8rem;
+    background-color: #606C5D;
+    box-shadow: -1rem 0rem var(--beige);
 }

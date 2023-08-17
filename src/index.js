@@ -24,6 +24,12 @@ app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "views", "login.html"))
 })
 
+// CARREGA A PÁGINA DE CADASTRO
+
+app.get("/signup", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "views", "signup.html"))
+})
+
 // INSERE UM NOVO USUARIO NA TABELA USERS
 app.post('/usuario', (req, res) => {
     insertUser(req.body)
